@@ -32,3 +32,45 @@ A lightweight kiosk interface designed to run on a Raspberry Pi 1B. This project
    ```bash
    git clone https://github.com/epsaul/Pi-1B-Kiosk-Server.git
    cd Pi-1B-Kiosk-Server
+   ```
+4. **Run the setup script**:
+   ```bash
+   sudo bash setup/install.sh
+   ```
+5. **Reboot** and the kiosk interface should launch automatically
+
+---
+
+## 📁 Project Structure
+
+```
+Pi-1B-Kiosk-Server/
+├── README.md
+├── setup/
+│   └── install.sh
+├── src/
+│   └── kiosk.py
+├── assets/
+│   └── logo.png
+└── .gitignore
+```
+
+---
+
+## 🧠 Notes
+
+- Designed for simplicity and reliability
+- Ideal for unattended environments
+- Can be adapted for other Raspberry Pi models
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License. See `LICENSE` for details.
+
+---
+
+## 🤝 Contributing
+
+Pull requests welcome! If you have ideas for improvements or want to adapt this for other use cases, feel free to fork and submit changes.
