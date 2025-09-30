@@ -95,7 +95,7 @@ Deploy the `index.html` from [DoES_Somebody_should_interface](https://github.com
 ## 🌍 Making It Public
 
 ### 1. **Expose the Pi to the Internet**
-- Set up **port forwarding** on your router (e.g., forward port 80 or 443 to the Pi)
+- Set up **port forwarding** on the router (e.g., forward port 80 or 443 to the Pi)
 - Or use a tunneling service:
   - [ngrok](https://ngrok.com/)
   - [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/)
@@ -114,7 +114,7 @@ Deploy the `index.html` from [DoES_Somebody_should_interface](https://github.com
 
 ### 4. **Secure the GitHub API Token**
 - Store token in `.env` (never expose to frontend)
-- Validate and sanitize form inputs before submitting to GitHub
+- Validate and sanitise form inputs before submitting to GitHub
 
 ---
 
