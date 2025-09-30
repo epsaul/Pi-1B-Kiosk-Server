@@ -179,3 +179,33 @@ This project treats issue reporting as a community ritual—accessible, expressi
 ---
 
 Built by Ed, with a screwdriver in one hand and a stanza in the other.
+
+## 🗓️ Session Log: Tue Sep 30 2025
+
+### 🔧 Git & Repo Sync
+
+- Switched Pi remote from HTTPS to SSH for seamless GitHub pushes
+- Generated new SSH key on Pi and added it to GitHub (`EdsPiKiosk`)
+- Confirmed SSH authentication via `ssh -T git@github.com`
+- Committed `kiosk.py` from Pi and pushed via SSH
+- Laptop repo pulled latest changes, now aligned with Pi and GitHub
+- Remote URLs verified across devices
+- `.env` remains untracked and excluded via `.gitignore`
+
+### 🧠 Reflections
+
+> “The kiosk speaks with its own key. The network listens without prompting.”
+
+### 📦 Repo State
+
+| Device   | Remote URL                          | Latest Commit |
+|----------|--------------------------------------|----------------|
+| Pi       | `git@github.com:epsaul/...` (SSH)    | `e75932e`      |
+| GitHub   | Received push from Pi                | `e75932e`      |
+| Laptop   | Pulled latest from GitHub            | `e75932e`      |
+
+### 🔜 Next Steps
+
+- Tag repo as `v0.3`
+- Draft boot log
+- Add local logging and systemd service
