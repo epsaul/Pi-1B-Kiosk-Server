@@ -58,3 +58,66 @@ ssh EdsPiKiosk
 ## Status
 
 SSH access confirmed working as of Tue Sep 30 2025, using RSA key authentication for user `ed`.
+
+## 🗓️ Session Log: Tue Sep 30 2025
+
+SSH access confirmed working for user `ed` on `EdsPiKiosk.local`, using RSA key authentication.  
+RSA key fingerprint: `SHA256:Uu648f5IIGEjaKfw5fhZUkVpv8ubogcBB/J2Putof1c`  
+SSH config entry added:
+Host EdsPiKiosk  
+  HostName EdsPiKiosk.local  
+  User ed  
+  IdentityFile ~/.ssh/id_rsa  
+
+Permissions verified:  
+chmod 700 ~/.ssh  
+chmod 600 ~/.ssh/authorized_keys  
+chmod 755 ~  
+
+Connection tested via:  
+ssh ed@EdsPiKiosk.local  
+
+System updated and essential tools installed:  
+sudo apt update && sudo apt upgrade -y  
+sudo apt install git python3-pip avahi-daemon tmux  
+
+GitHub repo cloned to Pi:  
+git clone https://github.com/epsaul/Pi-1B-Kiosk-Server.git ~/PiKiosk  
+cd ~/PiKiosk  
+
+Kiosk server concept scaffolded:  
+Headless Pi serves a local web form for submitting issues to the DoES Liverpool “Somebody Should” GitHub repo.  
+Users connect via their own device on the local network:  
+http://EdsPiKiosk.local:8080  
+Form accepts issue title and description.  
+Pi authenticates using stored GitHub token and posts to the repo.
+
+Token stored securely at:  
+/home/ed/.github_token  
+chmod 600 ~/.github_token  
+
+Accessed in Python via:  
+with open('/home/ed/.github_token') as f:  
+  token = f.read().strip()
+
+Planned backend: Python + Flask  
+Planned frontend: Simple HTML form rendered via Flask or templated
+
+Optional enhancements:  
+– QR code linking to the form  
+– Local logging for redundancy  
+– Poetic boot logs or status endpoint  
+– Dropdowns for labels or categories  
+– Autostart via systemd service:  
+  sudo systemctl enable kiosk.service  
+  sudo systemctl start kiosk.service  
+
+Monitoring & safety notes:  
+Safe to open new SSH session or use tmux during installs.  
+Avoid conflicting apt or systemctl commands mid-upgrade.  
+Use passive tools to monitor:  
+htop  
+journalctl -u kiosk.service -f  
+curl http://EdsPiKiosk.local:8080  
+tmux new -s monitor
+
