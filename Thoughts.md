@@ -121,3 +121,61 @@ journalctl -u kiosk.service -f
 curl http://EdsPiKiosk.local:8080  
 tmux new -s monitor
 
+# EdsPiKiosk: GitHub Issue Submitter
+
+A lightweight Raspberry Pi kiosk interface for submitting issues to the [DoESLiverpool/somebody-should](https://github.com/DoESLiverpool/somebody-should) repository. Designed for community spaces, workshops, and collaborative environments where reporting problems or ideas should be as simple as pressing a button.
+
+## 🛠 Features
+
+- Flask-powered web form served locally on the Pi  
+- Submits issues directly to GitHub via API  
+- Token authentication via `.env` file (excluded from repo)  
+- Simple HTML interface for quick input  
+- Modular design for future enhancements (labels, milestones, local logging)
+
+## 🚀 Setup
+
+```bash
+pip3 install flask python-dotenv requests
+```
+
+Create a `.env` file in the project directory:
+```
+GITHUB_TOKEN=ghp_yourActualTokenHere
+```
+
+Run the server:
+```bash
+python3 kiosk.py
+```
+
+Access the form from any device on the same network:
+```
+http://<Pi-IP>:8080
+```
+
+## 📄 Example Submission
+
+> Title: Test Issue: Kiosk Form Submission Check  
+> Body: Submitted via `kiosk.py` running on EdsPiKiosk. No action required.
+
+## 🔒 Security Notes
+
+- `.env` file is excluded via `.gitignore`  
+- Token is read securely and never exposed in logs  
+- Designed for local network use; not hardened for public deployment
+
+## 🧠 Philosophy
+
+This project treats issue reporting as a community ritual—accessible, expressive, and quietly powerful. The kiosk speaks; the network listens.
+
+## 📦 Future Enhancements
+
+- Dropdowns for labels and milestones  
+- Local logging of submissions  
+- Systemd service for auto-start  
+- Visual theming and poetic boot logs
+
+---
+
+Built by Ed, with a screwdriver in one hand and a stanza in the other.
