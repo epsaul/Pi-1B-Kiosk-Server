@@ -209,3 +209,18 @@ Built by Ed, with a screwdriver in one hand and a stanza in the other.
 - Tag repo as `v0.3`
 - Draft boot log
 - Add local logging and systemd service
+
+## 🧭 Milestone: Kiosk Service Activated via systemd  
+**Date:** 2025-10-01 · **Time:** 06:08 BST  
+**Event:** `kiosk.service` successfully installed and enabled. Flask server now boots with the Pi and runs persistently in the background.
+
+**Details:**  
+- Service file created at `/etc/systemd/system/kiosk.service`  
+- Enabled with `systemctl enable kiosk.service`  
+- Verified active with `systemctl status kiosk.service`  
+- Flask PID: 12556  
+- IP: 192.168.1.102  
+- SSH access confirmed from laptop
+
+**Reflection:**  
+> The kiosk now wakes with the Pi. A quiet sentinel, persistent and poised. Flask breathes, systemd watches, and the constellation realigns.
