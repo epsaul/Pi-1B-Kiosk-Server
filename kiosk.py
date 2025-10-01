@@ -3,6 +3,14 @@ import requests
 import os
 from dotenv import load_dotenv
 
+from datetime import datetime
+
+def boot_log():
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    print(f"🌄 [{timestamp}] Flask awakens. Listening for whispers in the morning light...")
+
+boot_log()
+
 # Load GitHub token from .env file
 load_dotenv(dotenv_path="/home/ed/PiKiosk/.env")
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
