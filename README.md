@@ -1,6 +1,6 @@
 # Pi-1B Kiosk Server
 
-A lightweight kiosk interface for Raspberry Pi 1B. Designed for public-facing terminals such as issue trackers, status boards, or interactive signage. Prioritizes resilience, simplicity, and minimal resource usage.
+A lightweight kiosk interface for Raspberry Pi 1B. Designed for public-facing terminals such as issue trackers, status boards, or interactive signage. Prioritises resilience, simplicity, and minimal resource usage.
 
 ## Overview
 - Runs on legacy hardware (Raspberry Pi 1B)
