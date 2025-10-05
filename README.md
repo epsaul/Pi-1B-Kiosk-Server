@@ -31,8 +31,7 @@ Pi-1B-Kiosk-Server/
 ├── README.md  
 ├── setup/  
 │   └── install.sh  
-├── src/  
-│   └── kiosk.py  
+├── kiosk.py  
 ├── assets/  
 │   └── logo.png  
 └── .gitignore
