@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template_string
+from flask import Flask, request, render_template_string, send_from_directory
 import requests
 import os
 from dotenv import load_dotenv
@@ -18,30 +18,8 @@ GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 # GitHub repo to submit issues to
 REPO = "DoESLiverpool/somebody-should"
 
-# HTML form template
-HTML_FORM = """
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Submit an Issue</title>
-  <style>
-    body { font-family: sans-serif; margin: 2em; }
-    input, textarea { width: 100%; padding: 0.5em; margin-bottom: 1em; }
-    button { padding: 0.5em 1em; font-size: 1em; }
-  </style>
-</head>
-<body>
-  <h2>Submit an Issue</h2>
-  <form method="POST">
-    <input name="title" placeholder="Issue title" required><br>
-    <textarea name="body" placeholder="Describe the issue" required></textarea><br>
-    <button type="submit">Submit</button>
-  </form>
-</body>
-</html>
-"""
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
 
 @app.route("/", methods=["GET", "POST"])
 def submit_issue():
@@ -59,7 +37,8 @@ def submit_issue():
             return "✅ Issue submitted!"
         else:
             return f"❌ Error: {response.status_code}<br>{response.text}"
-    return render_template_string(HTML_FORM)
+    return send_from_directory('static', 'issueForm.html')
+
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8080)
+    app.run(host="0.0.0.0", port=8081)
