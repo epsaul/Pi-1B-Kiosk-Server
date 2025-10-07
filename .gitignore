@@ -1,6 +1,12 @@
+# Logs
 *.log
+
+# Python artifacts
 __pycache__/
+
+# macOS metadata
 .DS_Store
-*.log
-__pycache__/
+
+# Secrets
 .env
+
